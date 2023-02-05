@@ -1,12 +1,12 @@
 pipeline {
-    agent {
-        label 'master'
+  agent any
+  stages {
+    stage('Hello World') {
+      steps {
+        echo 'Hello World!'
+        waitUntil()
+      }
     }
-    stages {
-        stage('Hello World') {
-            steps {
-                echo 'Hello World!'
-            }
-        }
-    }
+
+  }
 }
