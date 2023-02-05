@@ -1,12 +1,12 @@
 pipeline {
-  agent any
-  stages {
-    stage('Build') {
-      agent any
-      steps {
-        echo 'Hello World'
-      }
+    agent {
+        label 'master'
     }
-
-  }
+    stages {
+        stage('Hello World') {
+            steps {
+                echo 'Hello World!'
+            }
+        }
+    }
 }
