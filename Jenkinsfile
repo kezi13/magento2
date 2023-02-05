@@ -1,10 +1,15 @@
 pipeline {
   agent any
   stages {
-    stage('Hello World') {
+    stage('Deploy') {
       steps {
-        echo 'Hello World!'
-        waitUntil()
+        git(poll: true, url: 'git@github.com:kezi13/magento2.git', branch: 'master')
+      }
+    }
+
+    stage('hi') {
+      steps {
+        sh 'echo "hello world"'
       }
     }
 
